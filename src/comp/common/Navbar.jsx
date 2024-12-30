@@ -11,7 +11,7 @@ import {IoIosArrowDropdownCircle} from 'react-icons/io';
 import {useState, useEffect} from 'react';
 
 
-const subLinks = [
+const subLink = [
     {
         title: "Ai",
         link:"/catalog/ai"
@@ -35,7 +35,7 @@ const Navbar = () => {
     const {user} = useSelector((state)=>state.profile);
     const {token} = useSelector((state)=>state.auth);
     const {totalItems} = useSelector((state)=>state.cart);
-    const [subLinks , setSubLinks] = useState([]);
+    // const [subLinks , setSubLinks] = useState([]);
     
 
     // const fetchSublinks = async() =>{
