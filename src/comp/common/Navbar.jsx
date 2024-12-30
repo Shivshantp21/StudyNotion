@@ -11,46 +11,46 @@ import {IoIosArrowDropdownCircle} from 'react-icons/io';
 import {useState, useEffect} from 'react';
 
 
-const subLink = [
-    {
-        title: "Ai",
-        link:"/catalog/ai"
-    },
-    {
-        title: "Web-Development",
-        link:"/catalog/web-development"
-    },
-    {
-        title: "DSA",
-        link:"/catalog/dsa"
-    },
-    {
-        title: "Python",
-        link:"/catalog/python"
-    },
-];
+// const subLinks = [
+//     {
+//         title: "Ai",
+//         link:"/catalog/ai"
+//     },
+//     {
+//         title: "Web-Development",
+//         link:"/catalog/web-development"
+//     },
+//     {
+//         title: "DSA",
+//         link:"/catalog/dsa"
+//     },
+//     {
+//         title: "Python",
+//         link:"/catalog/python"
+//     },
+// ];
 const Navbar = () => {
 
 
     const {user} = useSelector((state)=>state.profile);
     const {token} = useSelector((state)=>state.auth);
     const {totalItems} = useSelector((state)=>state.cart);
-    // const [subLinks , setSubLinks] = useState([]);
+    const [subLinks , setSubLinks] = useState([]);
     
 
-    // const fetchSublinks = async() =>{
-    //     try{
-    //         const result = await apiConnector("GET", categories.CATEGORIES_API);
-    //         console.log("Printing Sublinks " , result);
-    //         setSubLinks(result.data.data);
-    //     }catch(error){
-    //         console.log("Error fetching sublinks " , error);
-    //     }
+    const fetchSublinks = async() =>{
+        try{
+            const result = await apiConnector("GET", categories.CATEGORIES_API);
+            console.log("Printing Sublinks " , result);
+            setSubLinks(result.data.data);
+        }catch(error){
+            console.log("Error fetching sublinks " , error);
+        }
 
-    // }
-    // useEffect(() => {
-    //   fetchSublinks();
-    // }, [])
+    }
+    useEffect(() => {
+      fetchSublinks();
+    }, [])
     
    
     const location = useLocation();
@@ -91,8 +91,8 @@ const Navbar = () => {
                                                     {
                                                         subLinks.length ? (
                                                                 subLinks.map( (subLink, index) => (
-                                                                    <Link to={`${subLink.link}`} key={index}>
-                                                                        <p className='p-1'>{subLink.title}</p>
+                                                                    <Link to={`catalog/${subLink.name}`} key={index}>
+                                                                        <p className='p-1'>{subLink.name}</p>
                                                                     </Link>
                                                                 ) )
                                                         ) : (<div></div>)
