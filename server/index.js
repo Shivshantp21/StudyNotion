@@ -22,12 +22,7 @@ database.connect();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-	cors({
-		origin:"https://studynotion-frontend-sepia-eight.vercel.app/",
-		credentials:true,
-	})
-)
+app.use(cors());
 
 app.use(
 	fileUpload({
