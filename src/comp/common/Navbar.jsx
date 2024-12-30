@@ -13,20 +13,12 @@ import {useState, useEffect} from 'react';
 
 // const subLinks = [
 //     {
-//         title: "Ai",
-//         link:"/catalog/ai"
-//     },
-//     {
-//         title: "Web-Development",
-//         link:"/catalog/web-development"
-//     },
-//     {
-//         title: "DSA",
-//         link:"/catalog/dsa"
-//     },
-//     {
 //         title: "Python",
 //         link:"/catalog/python"
+//     },
+//     {
+//         title: "Web Development",
+//         link:"/catalog/web-development"
 //     },
 // ];
 const Navbar = () => {
