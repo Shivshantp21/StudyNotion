@@ -81,7 +81,7 @@ const Navbar = () => {
                                                     </div>
 
                                                     {
-                                                        subLinks.length ? (
+                                                        subLinks?.length ? (
                                                                 subLinks.map( (subLink, index) => (
                                                                     <Link to={`catalog/${subLink.name}`} key={index}>
                                                                         <p className='p-1'>{subLink.name}</p>
