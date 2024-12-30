@@ -1,4 +1,4 @@
-const BASE_URL = "https://studynotion-backend-ftzm.onrender.com/api/v1"
+const BASE_URL = "https://studynotion-backend-9xt9.onrender.com/api/v1"
 // AUTH ENDPOINTS
 export const endpoints = {
   SENDOTP_API: BASE_URL + "/auth/sendotp",
